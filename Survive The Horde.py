@@ -58,28 +58,28 @@ game_font = pygame.font.Font('Minecraft copy.ttf', 25)
 title_font = pygame.font.Font('Minecraft copy.ttf', 50)
 
 # Game Sounds
-player_gun = pygame.mixer.Sound('arcade-8bit-fx-159064.mp3')
+player_gun = pygame.mixer.Sound('audio/arcade-8bit-fx-159064.mp3')
 player_gun.set_volume(0.8)
 
-zombie_shot = pygame.mixer.Sound('kick-hard-8-bit-103746.mp3')
+zombie_shot = pygame.mixer.Sound('audio/kick-hard-8-bit-103746.mp3')
 zombie_shot.set_volume(0.5)
 
-player_hit = pygame.mixer.Sound('hurt_c_08-102842.mp3')
+player_hit = pygame.mixer.Sound('audio/hurt_c_08-102842.mp3')
 player_hit.set_volume(1)
 
-thunder_noise = pygame.mixer.Sound('thunder-124463.mp3')
+thunder_noise = pygame.mixer.Sound('audio/thunder-124463.mp3')
 thunder_noise.set_volume(1)
 
-rain_noise = pygame.mixer.Sound('rain-with-distant-thunder-112714.mp3')
+rain_noise = pygame.mixer.Sound('audio/rain-with-distant-thunder-112714.mp3')
 rain_noise.set_volume(0.6)
 
-night_noise = pygame.mixer.Sound('night-ambience-17064.mp3')
+night_noise = pygame.mixer.Sound('audio/night-ambience-17064.mp3')
 night_noise.set_volume(0.5)
 
-player_death_sound = pygame.mixer.Sound('8-bit-scream_F_minor.wav')
+player_death_sound = pygame.mixer.Sound('audio/8-bit-scream_F_minor.wav')
 player_death_sound.set_volume(0.7)
 
-extra_heart = pygame.mixer.Sound('video-game-powerup-38065 copy 2.mp3')
+extra_heart = pygame.mixer.Sound('audio/video-game-powerup-38065 copy 2.mp3')
 
 # Lightning Variables
 lightning_color = (255, 255, 255)
@@ -237,7 +237,7 @@ class Zombie(pygame.sprite.Sprite):
         super().__init__()
 
         # Creating the zombie image and rectangle
-        self.image = pygame.image.load('Zombie.png').convert_alpha()
+        self.image = pygame.image.load('pngs/Zombie.png').convert_alpha()
         self.image_scaled = pygame.transform.scale(self.image, (350, 250))
         self.rect = self.image_scaled.get_rect(center=(x_pos, y_pos))
 
@@ -282,7 +282,7 @@ class BloodSplatter(pygame.sprite.Sprite):
         super().__init__()
 
         # Creating the blood splatter image and rectangle
-        unscaled_image = pygame.image.load('blood_splatter.png').convert_alpha()
+        unscaled_image = pygame.image.load('pngs/blood_splatter.png').convert_alpha()
         self.image = pygame.transform.scale(unscaled_image, (75, 75))
         self.rect = self.image.get_rect(center=(x_pos, y_pos))
 
@@ -313,7 +313,7 @@ class ExtraLife(pygame.sprite.Sprite):
         super().__init__()
 
         # Creating the extra life heart
-        health_powerup_surface = pygame.image.load('extra_heart.png').convert_alpha()
+        health_powerup_surface = pygame.image.load('pngs/extra_heart.png').convert_alpha()
         self.image = pygame.transform.scale(health_powerup_surface, (80, 80))
         self.rect = self.image.get_rect(center=(health_x_pos, health_y_pos))
 
@@ -344,7 +344,7 @@ def main(background):
     extra_life_group.add(extra_health)
 
     # Loading the game music
-    mixer.music.load('8-bit-halloween-story-166454.mp3')
+    mixer.music.load('audio/8-bit-halloween-story-166454.mp3')
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.2)
 
@@ -638,19 +638,19 @@ def display_zombie(screen):
 def display_health(screen):
     # Displaying the player's health
     # Loading in the images
-    heart_1 = pygame.image.load('Heart_Red_1.png').convert_alpha()
+    heart_1 = pygame.image.load('pngs/Heart_Red_1.png').convert_alpha()
     heart_1_scaled = pygame.transform.scale(heart_1, (40, 40))
     heart_1_rect = heart_1_scaled.get_rect(center=(25, 25))
 
-    heart_2 = pygame.image.load('Heart_Red_1.png').convert_alpha()
+    heart_2 = pygame.image.load('pngs/Heart_Red_1.png').convert_alpha()
     heart_2_scaled = pygame.transform.scale(heart_2, (40, 40))
     heart_2_rect = heart_2_scaled.get_rect(center=(55, 25))
 
-    heart_3 = pygame.image.load('Heart_Red_1.png').convert_alpha()
+    heart_3 = pygame.image.load('pngs/Heart_Red_1.png').convert_alpha()
     heart_3_scaled = pygame.transform.scale(heart_3, (40, 40))
     heart_3_rect = heart_3_scaled.get_rect(center=(85, 25))
 
-    heart_4 = pygame.image.load('Heart_Red_1.png').convert_alpha()
+    heart_4 = pygame.image.load('pngs/Heart_Red_1.png').convert_alpha()
     heart_4_scaled = pygame.transform.scale(heart_4, (40, 40))
     heart_4_rect = heart_4_scaled.get_rect(center=(115, 25))
 
